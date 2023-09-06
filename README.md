@@ -76,7 +76,7 @@ MySQL Dataase
 
 
 
-7. Access the admin panel at `http://127.0.0.1/:8000/admin/` and start adding blog posts, portfolio items, and managing leads.
+7. Access the admin panel at `http://127.0.0.1:8000/admin/` and start adding blog posts, portfolio items, and managing leads.
 
 ## Contributing
 
