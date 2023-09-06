@@ -14,7 +14,7 @@ urlpatterns = [
     path('', include('backend.urls')),
     path('blogs/', include('blog.urls')),
     path('contact/', include('contact.urls')),
-    path('', include('contact.urls')),
+    
     path('404/', TemplateView.as_view(template_name='common/404.html'), name='custom_404'),
 
 
