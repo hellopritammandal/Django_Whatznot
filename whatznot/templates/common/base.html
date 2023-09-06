@@ -1,0 +1,64 @@
+{% load static %}
+
+
+
+
+<!DOCTYPE html>
+<html
+    class="no-js ptf-is--home-studio ptf-is--header-style-2 ptf-is--footer-style-2 ptf-is--custom-cursor ptf-is--footer-fixed"
+    lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title> {% block title %} {% endblock title %}</title>
+    <meta name="description" content="Multipurpose HTML5 Template">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!--Favicon-->
+    <link rel="icon" type="image/png" href="{% static 'assets/img/root/favicon.png' %}">
+    <!--Framework-->
+    <link rel="stylesheet" href="{% static 'assets/css/framework/bootstrap-reboot.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/framework/bootstrap-grid.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/framework/bootstrap-utilities.min.css' %}">
+    <!--Plugins-->
+    <link rel="stylesheet" href="{% static 'assets/css/ptf-plugins.min.css' %}">
+    <!--Fonts-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri&amp;display=swap">
+    <link rel="stylesheet" href="{% static 'assets/fonts/CerebriSans/style.css' %}">
+    <!--Icons-->
+    <link rel="stylesheet" href="{% static 'assets/fonts/LineIcons-PRO/WebFonts/Pro-Light/font-css/LinIconsPro-Light.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/fonts/LineIcons-PRO/WebFonts/Pro-Regular/font-css/LineIcons.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/fonts/Socicons/socicon.css' %}">
+    <!--Style-->
+    <link rel="stylesheet" href="{% static 'assets/css/ptf-main.min.css' %}">
+    <!--Custom-->
+    <link rel="stylesheet" href="{% static 'assets/css/custom.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/service-details.css' %}">
+
+
+</head>
+
+
+{% include 'common/Header_main.html' %}
+
+
+{% block content %}
+
+
+
+
+
+
+
+
+
+
+{% endblock content%}
+
+<script src="{% static 'assets/scripts/ptf-plugins.min.js'%} "></script>
+<script src="{% static 'assets/scripts/ptf-helpers.js'%} "></script>
+<script src="{% static 'assets/scripts/ptf-controllers.min.js'%} "></script>
+
+{% include 'common/Footer.html' %}
+<!--Libs-->
+

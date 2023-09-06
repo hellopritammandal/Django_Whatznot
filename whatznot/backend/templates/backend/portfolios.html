@@ -1,0 +1,227 @@
+{% extends 'common/base.html' %}
+{% load static %}
+
+
+
+{% block title %} Portfolios | Whatznot Technology {% endblock title %}
+
+
+{% block content %}
+
+
+
+		
+			<!--Main-->
+			<main class="ptf-main">
+				<article class="ptf-page ptf-page--portfolio-grid">
+					<section>
+						<!--Spacer-->
+						<div class="ptf-spacer" style=" --ptf-xxl: 10rem; --ptf-md: 5rem;"></div>
+						<div class="container-xxl">
+							<div class="row">
+								<div class="col-xl-10">
+									<!--Animated Block-->
+									<div class="ptf-animated-block aos-init aos-animate" data-aos="fade" data-aos-delay="0">
+										<h1 class="large-heading">Look at usual things with <br>unusual eyes. </h1>
+									</div>
+								</div>
+							</div>
+							<!--Spacer-->
+							<div class="ptf-spacer" style=" --ptf-xxl: 4.375rem;"></div>
+						</div>
+						<div class="container-xxl">
+							<!--Animated Block-->
+							<div class="ptf-animated-block aos-init aos-animate" data-aos="fade" data-aos-delay="0">
+								<ul class="ptf-filters ptf-filters--style-1" id="ptf-filter-grid">
+									<li class="filter-item filter-item-active" data-filter="*">All</li>
+
+                                    {% for category in portfolio_categories %}
+									<li class="filter-item" data-filter=".filter-1">{{ category.name }}</li>
+
+                                    {% endfor %}
+								</ul>
+							</div>
+							<!--Spacer-->
+							<div class="ptf-spacer" style=" --ptf-xxl: 6.25rem; --ptf-md: 3.125rem;"></div>
+							<!--Animated Block-->
+                            <section>
+                                <div class="container-xxl">
+                                    <!--Animated Block-->
+
+                                    <div class="ptf-animated-block aos-init aos-animate" data-aos="fade" data-aos-delay="0">
+                                        <div class="ptf-isotope-grid" data-columns="2" data-layout="cellsByRow" data-x-gap="170" data-y-gap="120" data-controls="#ptf-filter-masonry" style="--ptf-gutter-x:170px; --ptf-gutter-y:120px; position: relative; height: 2724.23px;">
+                                            <div class="grid-sizer"></div>
+                                            {% for p in portfolio %}
+                                            <div class=" grid-item filter-1 " style="position: absolute; ">
+                                    <!--Portfolio Item-->
+
+                                                <article class="ptf-work ptf-work--style-2">
+
+
+                                                    <div class="ptf-work__media"><a class="ptf-work__link" href="{{p.slug}}"></a><img src="{{ p.portfolio_feature_image.url}} " alt="" loading="lazy">
+                                                    </div>
+                                                    <div class="ptf-work__meta">
+                                                        <h4 class="ptf-work__title"><a href="{{p.slug}}">{{p.portfolio_name}}</a>
+                                                        </h4>
+                                                        <div class="ptf-work__category">{{p.service_name}}
+                                                        </div>
+                                                    </div>
+
+                                                </article>
+                                                {% endfor %}
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!--Spacer-->
+                                    <div class="ptf-spacer" style=" --ptf-xxl: 10rem; --ptf-md: 5rem;"></div>
+
+                                   <div class="text-center">
+                                        <!--Animated Block-->
+                                        <div class="ptf-animated-block aos-init aos-animate" data-aos="fade" data-aos-delay="0"><a class="ptf-load-more" href="#">More</a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </section>
+						</div>
+						<!--Spacer-->
+						<div class="ptf-spacer" style=" --ptf-xxl: 8.125rem; --ptf-md: 4.0625rem;"></div>
+                    </section>
+                  
+                    
+					<section>
+						<!--Spacer-->
+						<div class="container-xxl">
+						<main class="ptf-main">
+                                <article class="ptf-page ptf-page--home-trending">
+                                    <section>
+                                        <!--Spacer-->
+                                        <div class="ptf-spacer" style=" --ptf-xxl: 3rem; --ptf-md: 4.375rem;"></div>
+                                        <div class="container">
+                                            <!--Animated Block-->
+                                            <div class="ptf-animated-block aos-init aos-animate" data-aos="fade" data-aos-delay="0">
+                                                <h1 class="fz-130 fz-90--md has-secondary-font fw-normal">We build top-notch solutions
+                                                    for <span class="has-accent-1">brand, web</span> &amp; <span class="has-accent-1">mobile</span> application</h1>
+                                            </div>
+                                            <!--Spacer-->
+                                            <div class="ptf-spacer" style=" --ptf-xxl: 2rem; --ptf-md: 2.8125rem;"></div>
+                
+                                        </div>
+                                        <!--Spacer-->
+                                        <div class="ptf-spacer" style=" --ptf-xxl: 3rem; --ptf-md: 5rem;"></div>
+                
+                                        <section>
+                                            <!--Spacer-->
+                                            <div class="ptf-spacer" style=" --ptf-xxl: 2rem; --ptf-md: 6.25rem;"></div>
+                                            <div class="container text-center">
+                                                <div class="d-inline-flex text-start">
+                                                    <!--Animated Block-->
+                                                    <div class="ptf-animated-block aos-init aos-animate" data-aos="fade" data-aos-delay="0">
+                                                        <div class="fz-30">Describe your project</div>
+                                                        <!--Spacer-->
+                                                        <div class="ptf-spacer" style=" --ptf-xxl: 1.25rem;"></div>
+                                                        <div class="fz-130 fz-90--md has-black-color has-secondary-font fw-normal lh-1p1">
+                                                            <a class="ptf-filled-link" href="tel:+919735151074">Call Whatznot</a>
+                                                        </div>
+                                                        <div class="fz-80 has-black-color"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" style="height:1em" viewBox="0 0 17 17">
+                                                                <path d="M16 .997V10h-1V2.703L4.683 13l-.707-.708L14.291 1.997H6.975v-1H16z"></path>
+                                                            </svg></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--Spacer-->
+                                            <div class="ptf-spacer" style=" --ptf-xxl: 10rem; --ptf-md: 5rem;"></div>
+                                        </section>
+                                    </section>
+                
+                                    <main class="ptf-main">
+                                        <article class="ptf-page ptf-page--home-modern">
+                                            <section>
+                                                <div class="container-xxl">
+                                                    <!--Divider-->
+                                                    <div class="ptf-divider" style="--ptf-color: var(--ptf-color-14); --ptf-height: 1px;"></div>
+                                                </div>
+                                            </section>
+
+
+
+
+                                        
+                                      
+
+                                            
+                
+                
+                                            {% include "common/our_partner.html" %}
+                
+                                            {% include "common/reviews.html" %}
+                                      
+                                            {% include "common/partner_site.html" %}
+                
+                                            {% include "common/c.html" %}
+
+                
+                
+                
+                
+                
+                                                    <section>
+                                                        <div class="container">
+                                                            <!--Divider-->
+                                                            <div class="ptf-divider" style="--ptf-color: var(--ptf-color-14); --ptf-height: 1px;"></div>
+                                                        </div>
+                                                    </section>
+                                                    <section>
+                                                        <!--Spacer-->
+                                                        <div class="ptf-spacer" style=" --ptf-xxl: 12.5rem; --ptf-md: 6.25rem;"></div>
+                                                        <div class="container text-center">
+                                                            <div class="d-inline-flex text-start">
+                                                                <!--Animated Block-->
+                                                                <div class="ptf-animated-block aos-init aos-animate" data-aos="fade" data-aos-delay="0">
+                                                                    <div class="fz-30">Describe your project</div>
+                                                                    <!--Spacer-->
+                                                                    <div class="ptf-spacer" style=" --ptf-xxl: 1.25rem;"></div>
+                                                                    <div class="fz-130 fz-90--md has-black-color has-secondary-font fw-normal lh-1p1"><a class="ptf-filled-link" href="https://wa.me/919735151074">WhatsApp Us</a></div>
+                                                                    <div class="fz-80 has-black-color"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" style="height:1em" viewBox="0 0 17 17">
+                                                                            <path d="M16 .997V10h-1V2.703L4.683 13l-.707-.708L14.291 1.997H6.975v-1H16z"></path>
+                                                                        </svg></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!--Spacer-->
+                                                        <div class="ptf-spacer" style=" --ptf-xxl: 10rem; --ptf-md: 5rem;"></div>
+                                                    </section>                 
+                                                    
+                
+
+
+                
+                
+                </article>
+            </main>
+        </article>
+    </main>
+</article>
+</main>
+</div>
+						
+						<div class="ptf-spacer" style=" --ptf-xxl: 10rem; --ptf-md: 5rem;"></div>
+					</section>
+				</article>
+            </main>
+            
+
+
+
+
+
+
+
+
+
+        </div>
+        
+        <!--Footer-->       
+
+{% endblock content %}

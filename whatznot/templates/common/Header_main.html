@@ -1,0 +1,123 @@
+{% load static %}
+
+
+
+
+<body>
+    <!--Site Wrapper-->
+    <div class="ptf-site-wrapper animsition">
+        <!--Site Wrapper Inner-->
+        <div class="ptf-site-wrapper__inner">
+            <!--Header-->
+            <header class="ptf-header ptf-header--style-2 ptf-header--opaque">
+                <div class="ptf-navbar ptf-navbar--main ptf-navbar--sticky">
+                    <div class="container-xxl">
+                        <div class="ptf-navbar-inner">
+                            <!--Logo--><a class="ptf-navbar-logo" href="/"><img class="black"
+                                    src="{% static 'assets/img/root/logo-dark.png' %}" alt="Whatznot Technology Logo" loading="lazy"><img class="white"
+                                    src="{% static 'assets/img/root/logo-white.png' %}" alt="Whatznot Technology Logo" loading="lazy"></a>
+                            <!--Navigation-->
+                            <nav class="ptf-nav ptf-nav--default">
+                                <!--Menu-->
+                                <ul class="sf-menu">
+                                    <li class="{% if current_page == 'services' %}current-menu-item{% endif %}"><a href="{% url 'services' %}"><span>Services</span></a>
+                                <ul class="sub-menu">
+                                    <li class="{% if current_page == 'UIUX' %}current-menu-item{% endif %}"><a href="{% url 'UIUX' %}"><span>UI & UX Design </span></a>
+                                    </li>
+                                    <li class="{% if current_page == 'webservices' %}current-menu-item{% endif %}"><a href="{% url 'webservices' %}"><span>Website Design and Development</span></a>
+                                    </li>
+                                    <li class="{% if current_page == 'mobileservices' %}current-menu-item{% endif %}"><a href="{% url 'mobileservices' %}"><span>Mobile Application Development</span></a>
+                                    </li>
+                                    </li>
+                                </ul>
+                            </li>
+                                    <li class="{% if current_page == 'portfolios' %}current-menu-item{% endif %}"><a href="{% url 'portfolios' %}"><span>Portfolios</span></a>
+                                    </li>
+                                    <li><a href="#"><span>Know More</span></a>
+                                        <ul class="sub-menu">
+                                            <li class="{% if current_page == 'about' %}current-menu-item{% endif %}"><a href="{% url 'about' %}"><span>About Us</span></a>
+                                            </li>
+                                            <li class="{% if current_page == 'why' %}current-menu-item{% endif %}"><a href="{% url 'why' %}"><span>Why Choice Us ?</span></a>
+                                            </li>
+                                            <li class="{% if current_page == 'reviews' %}current-menu-item{% endif %}"><a href="{% url 'reviews' %}"><span>Client Reviews</span></a>
+                                            </li>
+                                            <li class="{% if current_page == 'blogs' %}current-menu-item{% endif %}"><a href="{% url 'blogs' %}"><span>Blogs</span></a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="{% if current_page == 'faqs' %}current-menu-item{% endif %}"><a href="{% url 'faqs' %}"><span>F&Qs</span></a>
+                                    </li>
+                                    <li class="{% if current_page == 'contact' %}current-menu-item{% endif %}"><a href="{% url 'contact' %}"><span>Contact
+                                                us</span></a>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <!--Buttons-->
+                            <!--Offcanvas Menu Toggle--><a class="ptf-offcanvas-menu-icon js-offcanvas-menu-toggle"
+                                href="#"><i class="lnir lnir-menu-alt-5"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!--Site Overlay-->
+            <div class="ptf-site-overlay"></div>
+            <!--Offcanvas Menu-->
+            <div class="ptf-offcanvas-menu">
+                <div class="ptf-offcanvas-menu__header">
+                    <div class="ptf-language-switcher"><a class="is-active" href="#">Customer Login</a></div><a class="ptf-offcanvas-menu-icon js-offcanvas-menu-toggle"
+                        href="#"><i class="lnir lnir-close"></i></a>
+                </div>
+                <div class="ptf-offcanvas-menu__navigation">
+                    <!--Navigation-->
+                    <nav class="ptf-nav ptf-nav--offcanvas">
+                        <!--Menu-->
+                        <ul class="sf-menu">
+
+                            <li class="{% if current_page == 'services' %}current-menu-item{% endif %}"><a href="{% url 'services' %}"><span>Services</span></a>
+                                <ul class="sub-menu">
+                                    <li class="{% if current_page == 'UIUX' %}current-menu-item{% endif %}"><a href="{% url 'UIUX' %}"><span>UI & UX Design </span></a>
+                                    </li>
+                                    <li class="{% if current_page == 'webservices' %}current-menu-item{% endif %}"><a href="{% url 'webservices' %}"><span>Website Design and Development</span></a>
+                                    </li>
+                                    <li class="{% if current_page == 'mobileservices' %}current-menu-item{% endif %}"><a href="{% url 'mobileservices' %}"><span>Mobile Application Development</span></a>
+                                    </li>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="{% if current_page == 'portfolios' %}current-menu-item{% endif %}"><a href="{% url 'portfolios' %}"><span>Portfolios</span></a>
+                            </li>
+                            <li class="menu-item-has-children"><a href="#"><span>Know More</span></a>
+                                <ul class="sub-menu">
+                                    <li class="{% if current_page == 'about' %}current-menu-item{% endif %}"><a href="{% url 'about' %}"><span>About Us</span></a>
+                                    </li>
+                                    <li class="{% if current_page == 'why' %}current-menu-item{% endif %}"><a href="{% url 'why' %}"><span>Why Choice Us ?</span></a>
+                                    </li>
+                                    <li class="{% if current_page == 'reviews' %}current-menu-item{% endif %}"><a href="{% url 'reviews' %}"><span>Client Reviews</span></a>
+                                    </li>
+                                    <li class="{% if current_page == 'blogs' %}current-menu-item{% endif %}"><a href="{% url 'blogs' %}"><span>Blogs</span></a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="{% if current_page == 'faqs' %}current-menu-item{% endif %}"><a href="{% url 'faqs' %}"><span>F&Qs</span></a>
+                            </li>
+                            <li class="{% if current_page == 'contact' %}current-menu-item{% endif %}"><a href="{% url 'contact' %}"><span>Contact Us</span></a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="ptf-offcanvas-menu__footer">
+                    <p class="ptf-offcanvas-menu__copyright">© 2023 <span>Whatznot</span>. All Rights Reserved.
+                        <br>Development by <span>Whatznot Technology</span>.
+                    </p>
+                    <div class="ptf-offcanvas-menu__socials">
+                        <!--Social Icon--><a class="ptf-social-icon ptf-social-icon--style-3 twitter" href="#"
+                            target="_blank"><i class="socicon-twitter"></i></a>
+                        <!--Social Icon--><a class="ptf-social-icon ptf-social-icon--style-3 facebook" href="#"
+                            target="_blank"><i class="socicon-facebook"></i></a>
+                        <!--Social Icon--><a class="ptf-social-icon ptf-social-icon--style-3 instagram" href="#"
+                            target="_blank"><i class="socicon-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

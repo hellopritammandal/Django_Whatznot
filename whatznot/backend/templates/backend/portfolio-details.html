@@ -1,0 +1,406 @@
+{% extends 'common/base.html' %}
+{% load static %}
+
+
+
+{% block title %} {{ portfolio.portfolio_name }} | Whatznot Technology {% endblock title %}
+
+
+{% block content %}
+
+    <!--Main-->
+    <main class="ptf-main">
+        <article class="ptf-page ptf-page--home-studio">
+
+
+         <section>
+						<!--Spacer-->
+						<div class="ptf-spacer" style=" --ptf-xxl: 10rem; --ptf-md: 5rem;"></div>
+						<div class="container-xxl">
+							<div class="row">
+								<div class="col-xl-6">
+									<!--Animated Block-->
+									<div class="ptf-animated-block aos-init aos-animate" data-aos="fade" data-aos-delay="0">
+										<h1 class="large-heading">{{ portfolio.portfolio_name }}</h1>
+										<!--Spacer-->
+										<div class="ptf-spacer" style=" --ptf-xxl: 5rem; --ptf-md: 2.5rem;"></div>
+										<!--Social Icon--><a class="ptf-social-icon ptf-social-icon--style-3 twitter" href="https://www.freelancer.com/u/whatznot" target="_blank"><i class="socicon-freelancer"></i></a>
+                                                                <!--Social Icon--><a class="ptf-social-icon ptf-social-icon--style-3 twitter" href="https://www.upwork.com/freelancers/whatznot" target="_blank"><i class="socicon-upwork"></i></a>
+                                                                <!--Social Icon--><a class="ptf-social-icon ptf-social-icon--style-3 facebook" href="https://www.facebook.com/whatznot" target="_blank"><i class="socicon-facebook"></i></a>
+                                                                <!--Social Icon--><a class="ptf-social-icon ptf-social-icon--style-3 instagram" href="https://www.instagram.com/whatznot/" target="_blank"><i class="socicon-instagram"></i></a>
+                                                                <!--Social Icon--><a class="ptf-social-icon ptf-social-icon--style-3 pinterest" href="https://www.linkedin.com/company/whatznot" target="_blank"><i class="socicon-linkedin"></i></a>
+									</div>
+									<!--Spacer-->
+									<div class="ptf-spacer" style=" --ptf-lg: 4.375rem; --ptf-md: 2.1875rem;"></div>
+								</div>
+								<div class="col-xl-3">
+									<!--Spacer-->
+									<div class="ptf-spacer" style=" --ptf-xxl: 1.25rem;"></div>
+									<!--Animated Block-->
+									<div class="ptf-animated-block aos-init aos-animate" data-aos="fade" data-aos-delay="100">
+										<h5 class="fz-14 text-uppercase has-3-color fw-normal">Client</h5>
+										<!--Spacer-->
+										<div class="ptf-spacer" style=" --ptf-xxl: 1.25rem;"></div>
+										<p class="fz-20 lh-1p5 has-black-color">{{ portfolio.client_name }}</p>
+									</div>
+									<!--Spacer-->
+									<div class="ptf-spacer" style=" --ptf-xxl: 4.375rem; --ptf-md: 2.1875rem;"></div>
+									<!--Animated Block-->
+									<div class="ptf-animated-block aos-init aos-animate" data-aos="fade" data-aos-delay="200">
+										<h5 class="fz-14 text-uppercase has-3-color fw-normal">Services</h5>
+										<!--Spacer-->
+										<div class="ptf-spacer" style=" --ptf-xxl: 1.25rem;"></div>
+										<p class="fz-20 lh-1p5 has-black-color">{{ portfolio.service_name }}</p>
+									</div>
+								</div>
+								<div class="col-xl-3">
+									<!--Spacer-->
+									<div class="ptf-spacer" style=" --ptf-xxl: 1.25rem;"></div>
+									<!--Animated Block-->
+									<div class="ptf-animated-block aos-init aos-animate" data-aos="fade" data-aos-delay="300">
+										<h5 class="fz-14 text-uppercase has-3-color fw-normal">Team</h5>
+										<!--Spacer-->
+										<div class="ptf-spacer" style=" --ptf-xxl: 1.25rem;"></div>
+										<p class="fz-20 lh-1p5 has-black-color">{{ portfolio.team }}</p>
+									</div>
+									<!--Spacer-->
+									<div class="ptf-spacer" style=" --ptf-xxl: 4.375rem; --ptf-md: 2.1875rem;"></div>
+									<!--Animated Block-->
+									<div class="ptf-animated-block aos-init aos-animate" data-aos="fade" data-aos-delay="400">
+										<h5 class="fz-14 text-uppercase has-3-color fw-normal">Date</h5>
+										<!--Spacer-->
+										<div class="ptf-spacer" style=" --ptf-xxl: 1.25rem;"></div>
+										<p class="fz-20 lh-1p5 has-black-color">{{ portfolio.date }}</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--Spacer-->
+						<div class="ptf-spacer" style=" --ptf-xxl: 6.25rem; --ptf-md: 3.125rem;"></div>
+         </section>
+
+         <div class="container-xxl">
+            <!--Animated Block-->
+            <div class="ptf-animated-block aos-init aos-animate" data-aos="fade" data-aos-delay="0">
+                <!--Simple Image-->
+                <div class="ptf-simple-image"><a href="{{ portfolio.portfolio_feature_image.url }}" data-fancybox="" rel="nofollow"><img src="{{ portfolio.portfolio_feature_image.url }}" alt="" loading="lazy"></a>
+                </div>
+            </div>
+        </div>
+
+        <section>
+            <!--Spacer-->
+            <div class="ptf-spacer" style=" --ptf-xxl: 10rem; --ptf-md: 3.125rem;"></div>
+            <div class="container">
+                <!--Animated Block-->
+                <div class="ptf-animated-block aos-init" data-aos="fade" data-aos-delay="0">
+                    <p class="fz-30 has-black-color">{{ portfolio.overview }}</p>
+                </div>
+                <!--Spacer-->
+                <div class="ptf-spacer" style=" --ptf-xxl: 4.375rem; --ptf-md: 2.1875rem;"></div>
+                <!--Divider-->
+                <div class="ptf-divider" style="--ptf-height: 1px; --ptf-color: var(--ptf-color-14);"></div>
+                <!--Spacer-->
+                <div class="ptf-spacer" style=" --ptf-xxl: 6.25rem; --ptf-md: 3.125rem;"></div>
+                <!--Animated Block-->
+
+                <!--Spacer-->
+                <div class="ptf-spacer" style=" --ptf-xxl: 4.375rem; --ptf-md: 2.1875rem;"></div>
+                <!--Animated Block-->
+                <div class="ptf-animated-block aos-init" data-aos="fade" data-aos-delay="0">
+                    <!--Twitter Review-->
+                    <div class="ptf-twitter-review ptf-twitter-review--style-3">
+                        <div class="ptf-twitter-review__header">
+                            <div class="ptf-twitter-review__avatar"><img src="{% static 'assets/img/root/twitter-avatar.png'%}" alt="" loading="lazy"></div>
+                            <div class="ptf-twitter-review__meta">
+                                <h6 class="ptf-twitter-review__author">{{portfolio.reviews.author_name}}
+                                </h6>
+                                <div class="ptf-twitter-review__info"><a href="#">@whatznot</a>{{portfolio.reviews.review_date}}</div>
+                            </div>
+                            <div class="ptf-twitter-review__icon"><i class="socicon-{{portfolio.reviews.platform_name}}"></i></div>
+                        </div>
+                        <div class="ptf-twitter-review__content">
+                            <p>{{portfolio.reviews.review_details}}</p>
+                        </div>
+                    </div>
+                </div>
+                <!--Spacer-->
+                <div class="ptf-spacer" style=" --ptf-xxl: 6.25rem; --ptf-md: 3.125rem;"></div>
+                <!--Animated Block-->
+                <div class="ptf-animated-block aos-init" data-aos="fade" data-aos-delay="0">
+                    <h2>Solution</h2>
+                </div>
+                <!--Spacer-->
+                <div class="ptf-spacer" style=" --ptf-xxl: 1.5625rem;"></div>
+                <!--Animated Block-->
+                <div class="ptf-animated-block aos-init" data-aos="fade" data-aos-delay="0">
+                    <p class="fz-18">{{ portfolio.solution }}</p>
+                </div>
+                <!--Spacer-->
+                <div class="ptf-spacer" style=" --ptf-xxl: 5.625rem; --ptf-md: 2.8125rem;"></div>
+                <!--Animated Block-->
+                <div class="ptf-animated-block aos-init" data-aos="fade" data-aos-delay="0">
+                    <!--Gallery-->
+                    <div class="ptf-justified-gallery justified-gallery" data-row-height="500" data-margins="30" style="height: 1370.23px;">
+                        <div class="ptf-gallery__item jg-entry jg-entry-visible" style="width: 633px; height: 510.648px; top: 0px; left: 0px;">
+                            <div class="ptf-simple-image"><a href="{{portfolio.image1.url}}" data-fancybox="869" rel="nofollow"><img src="{{portfolio.image1.url}}" alt="" loading="lazy"></a></div>
+                        </div>
+                        <div class="ptf-gallery__item jg-entry jg-entry-visible" style="width: 633px; height: 510.648px; top: 0px; left: 663px;">
+                            <div class="ptf-simple-image"><a href="{{portfolio.image2.url}}" data-fancybox="869" rel="nofollow"><img src="{{portfolio.image2.url}}" alt="" loading="lazy"></a></div>
+                        </div>
+                        <div class="ptf-gallery__item jg-entry jg-entry-visible" style="width: 1296px; height: 829.579px; top: 540.648px; left: 0px;">
+                            <div class="ptf-simple-image"><a href="{{portfolio.image3.url}}" data-fancybox="869" rel="nofollow"><img src="{{portfolio.image3.url}}" alt="" loading="lazy"></a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section>
+            <!--Post Navigation-->
+            <div class="ptf-post-navigation ptf-post-navigation--style-2">
+                <div class="container"><span>Next Project</span><a class="h1 large-heading ptf-filled-link" href="portfolio-showcase-1.html">SPA Brand</a></div>
+            </div>
+        </section>
+
+
+
+        <section>
+            <div class="container">
+                <div class="ptf-animated-block">
+                    <h1 class="fz-130 fz-90--md has-secondary-font fw-normal">We build top-notch solutions
+                        for <span class="has-accent-1">brand, web</span> &amp; <span class="has-accent-1">mobile</span> application</h1>
+                </div>
+                <div class="ptf-spacer" style=" --ptf-xxl: 3.75rem;"></div>
+                <div class="row align-items-center" style="--bs-gutter-y: 2rem;">
+                    <div class="col-12 col-xl-6">
+                        <!--Animated Block-->
+                        <div class="ptf-animated-block">
+                            <!--Phone Block-->
+                            <div class="ptf-phone-block">
+                                <div class="ptf-phone-block__icon"><i class="lnil lnil-phone"></i></div>
+                                <div class="ptf-phone-block__caption">Call Us<br>Directly</div>
+                                <div class="ptf-phone-block__phone"><a href="tel:+3796354868">(+91) 97 3515
+                                        1074</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-xl">
+                        <!--Animated Block-->
+                        <div class="ptf-animated-block">
+                            <!--Counter Up-->
+                            <div class="ptf-counter-up ptf-counter-up--style-2">
+                                <div class="ptf-counter-up__value" data-prefix="" data-suffix="">350</div>
+                                <h5 class="ptf-counter-up__title">Happy Clients <br>in 8 years</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-xl text-xl-end">
+                        <!--Animated Block-->
+                        <div class="ptf-animated-block">
+                            <!--Counter Up-->
+                            <div class="ptf-counter-up ptf-counter-up--style-2">
+                                <div class="ptf-counter-up__value" data-prefix="" data-suffix="">500</div>
+                                <h5 class="ptf-counter-up__title">Projects completed on <br>the worldwide
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>           
+        </section>    
+        
+        <section>
+            <!--Spacer-->
+            
+            <div class="ptf-spacer" style=" --ptf-xxl: 10rem; --ptf-md: 5rem;"></div>
+            <div class="container">
+                <!--Animated Block-->
+                <div class="ptf-animated-block">
+                    <h2 class="h1 large-heading has-accent-1 d-inline-flex">Latest Works</h2><a class="ptf-link-with-arrow fz-18 text-uppercase d-none d-lg-inline-flex" href="{% url 'portfolios' %}" style="margin-left: 5.625rem;">All Projects <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" style="height:1em" viewBox="0 0 17 17">
+                            <path d="M16 .997V10h-1V2.703L4.683 13l-.707-.708L14.291 1.997H6.975v-1H16z"></path>
+                        </svg></a>
+                </div>
+                <!--Spacer-->
+                <div class="ptf-spacer" style=" --ptf-xxl: 6.25rem;"></div>
+                <!--Animated Block-->
+                <div class="ptf-animated-block">
+                    <div class="ptf-isotope-grid" data-columns="1" data-layout="masonry" data-x-gap="0" data-y-gap="0" style="--ptf-gutter-x:0px; --ptf-gutter-y:0px; position: relative; height: 742px;">
+                        <div class="grid-sizer"></div>
+                        <div class=" grid-item filter-1 filter-4 filter-7" style="position: absolute; left: 0px; top: 0px;">
+                            <!--Portfolio Item-->
+                            {% for related_portfolio in related_portfolios %}
+    <article class="ptf-work ptf-work--style-4">
+        <a class="ptf-work__link" href="{% url 'portfolio-detail' slug=related_portfolio.slug %}" data-tooltip-image="{{ related_portfolio.portfolio_feature_image.url }}"></a>
+        <div class="ptf-work__category">{{ related_portfolio.client_name }}</div>
+        <h4 class="ptf-work__title">{{ related_portfolio.portfolio_name }}</h4>
+        <div class="ptf-work__date">{{ related_portfolio.date }}</div>
+    </article>
+{% endfor %}
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!--Spacer-->
+            <div class="ptf-spacer" style=" --ptf-xxl: 10rem; --ptf-md: 5rem;"></div>
+        </section>
+
+                  
+
+        <main class="ptf-main">
+                <div class="ptf-spacer" style=" --ptf-xxl: 3.75rem;"></div>
+                <article class="ptf-page ptf-page--services">             
+
+
+                
+
+            <section class="has-accent-1-background"
+                style="background-image: url({% static 'assets/img/root/service-bubble.png'%}); background-repeat: no-repeat;	background-position: 100% calc(100% + 120px);">
+                <!--Spacer-->
+                <div class="ptf-spacer" style=" --ptf-xxl: 10rem; --ptf-md: 5rem;"></div>
+                <div class="container-xxl">
+                    <!--Animated Block-->
+                    <div class="ptf-animated-block" data-aos="fade" data-aos-delay="0">
+                        <h2 class="h1 large-heading">Our Approach</h2>
+                    </div>
+                    <!--Spacer-->
+                    <div class="ptf-spacer" style=" --ptf-xxl: 7.5rem; --ptf-md: 3.75rem;"></div>
+                    <div class="row" style="--bs-gutter-x: 3.75rem; --bs-gutter-y: 7.5rem">
+                        <div class="col-xl-4 col-lg-6">
+                            <!--Animated Block-->
+                            <div class="ptf-animated-block" data-aos="fade" data-aos-delay="0">
+                                <!--Approach Box-->
+                                <div class="ptf-approach-box" style="--ptf-title-color: var(--ptf-color-white);">
+                                    <div class="ptf-approach-box__subtitle">One
+                                    </div>
+                                    <h3 class="ptf-approach-box__title h1">Research
+                                    </h3>
+                                    <div class="ptf-approach-box__content">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit cras tempus. Libero
+                                            ligula, vitae accumsan tortor varius nec. Ut luctus maximus dolor. Nunc sed
+                                            diam sit amet urna fermentum accumsan vitae vitae diam.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-6">
+                            <!--Animated Block-->
+                            <div class="ptf-animated-block" data-aos="fade" data-aos-delay="100">
+                                <!--Approach Box-->
+                                <div class="ptf-approach-box" style="--ptf-title-color: var(--ptf-color-white);">
+                                    <div class="ptf-approach-box__subtitle">Two
+                                    </div>
+                                    <h3 class="ptf-approach-box__title h1">Concept
+                                    </h3>
+                                    <div class="ptf-approach-box__content">
+                                        <p>Donec venenatis consequat libero, quis auctor nunc volutpat quis. Proin at
+                                            ipsum id magna dapibus dictum eget lobortis magna. Fusce et ligula non
+                                            tellus vulputate condimentum.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-6">
+                            <!--Animated Block-->
+                            <div class="ptf-animated-block" data-aos="fade" data-aos-delay="200">
+                                <!--Approach Box-->
+                                <div class="ptf-approach-box" style="--ptf-title-color: var(--ptf-color-white);">
+                                    <div class="ptf-approach-box__subtitle">Three
+                                    </div>
+                                    <h3 class="ptf-approach-box__title h1">Development
+                                    </h3>
+                                    <div class="ptf-approach-box__content">
+                                        <p>Vivamus vel sollicitudin sem, id sagittis justo. Nam non magna eleifend,
+                                            tempus nisl quis, commod diam. Morbi gravida ut nulla non porttitor.
+                                            Suspendis eget arcu eu ex dignissim faucibus. Nullam et luctus tortor.
+                                            Quisque eu risus vel turpis tempuss.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-6">
+                            <!--Animated Block-->
+                            <div class="ptf-animated-block" data-aos="fade" data-aos-delay="0">
+                                <!--Approach Box-->
+                                <div class="ptf-approach-box" style="--ptf-title-color: var(--ptf-color-white);">
+                                    <div class="ptf-approach-box__subtitle">Four
+                                    </div>
+                                    <h3 class="ptf-approach-box__title h1">Test
+                                    </h3>
+                                    <div class="ptf-approach-box__content">
+                                        <p>Suspendisse vel magna vitae nunc consequat eleifend. Aenean iaculis est eget
+                                            turpis lacinia egest dictum ipsum sollicitudin.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-6">
+                            <!--Animated Block-->
+                            <div class="ptf-animated-block" data-aos="fade" data-aos-delay="100">
+                                <!--Approach Box-->
+                                <div class="ptf-approach-box" style="--ptf-title-color: var(--ptf-color-white);">
+                                    <div class="ptf-approach-box__subtitle">Five
+                                    </div>
+                                    <h3 class="ptf-approach-box__title h1">Hand Over
+                                    </h3>
+                                    <div class="ptf-approach-box__content">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit cras tempus. Libero
+                                            ligula, vitae accumsan tortor varius nec. Ut luctus maximus dolor. Nunc sed
+                                            diam sit amet urna fermentum accumsan vitae vitae diam.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Spacer-->
+                <div class="ptf-spacer" style=" --ptf-xxl: 10rem; --ptf-md: 5rem;"></div>
+
+
+            </section>
+
+         
+
+            <main class="ptf-main">
+                <article class="ptf-page ptf-page--home-trending">
+                  
+
+                    <main class="ptf-main">
+                        <article class="ptf-page ptf-page--home-modern">
+                            <section>
+                                <div class="container-xxl">
+                                    <!--Divider-->
+                                    <div class="ptf-divider"
+                                        style="--ptf-color: var(--ptf-color-14); --ptf-height: 1px;"></div>
+                                </div>
+                            </section>
+                   
+                            <section>
+                                <div class="container-xxl">
+                                    <!--Divider-->
+                                    <div class="ptf-divider"
+                                        style="--ptf-color: var(--ptf-color-14); --ptf-height: 1px;"></div>
+                                </div>
+                            </section>                       
+                            </div>
+
+
+                            {% include "common/our_partner.html" %}
+
+                            {% include "common/reviews.html" %}
+                        
+                            {% include "common/partner_site.html" %}
+
+                            {% include "common/c.html" %}
+
+                                                                     
+                                        <!--Footer-->
+{% endblock content %}

@@ -1,0 +1,78 @@
+{% load static %}
+<div class="ptf-spacer" style=" --ptf-xxl: 5rem; --ptf-md: 5rem;"></div>
+
+
+
+                            <section>
+                                <!--Spacer-->
+                                <div class="ptf-spacer" style=" --ptf-xxl: 8.75rem; --ptf-md: 4.375rem;"></div>
+                                <div class="container">
+                                    <div class="row align-items-center">
+                                        <div class="col-8">
+                                            <!--Animated Block-->
+                                            <div class="ptf-animated-block" data-aos="fade" data-aos-delay="0">
+                                                <h2 class="h1 large-heading has-accent-1">Trusted By Clients</h2>
+                                            </div>
+                                        </div>
+                                        <div class="col-4 text-end">
+                                            <!--Animated Block-->
+                                            <div class="ptf-animated-block" data-aos="fade" data-aos-delay="0">
+                                                <!--Slider Controls-->
+                                                <div
+                                                    class="ptf-slider-controls ptf-slider-controls--style-3 ptf-review-slider">
+                                                    <div class="ptf-swiper-button-prev ptf-swiper-button-prev--style-3">
+                                                        <i class="lnil lnil-chevron-left"></i>
+                                                    </div>
+                                                    <div class="ptf-swiper-button-next ptf-swiper-button-next--style-3">
+                                                        <i class="lnil lnil-chevron-right"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--Spacer-->
+                                    <div class="ptf-spacer" style=" --ptf-xxl: 4.375rem;"></div>
+                                    <!--Animated Block-->
+                                    <div class="ptf-animated-block" data-aos="fade" data-aos-delay="0">
+                                        <!--Content Slider-->
+                                        <div class="ptf-content-slider swiper-container " data-cursor=""
+                                            data-navigation-anchor=".ptf-review-slider" data-gap="170"
+                                            data-loop="enable" data-speed="" data-autoplay="" data-autoplay-speed=""
+                                            data-slides-centered=""
+                                            data-slide-settings="{&quot;slides_to_show_tablet&quot;:2,&quot;slides_to_show&quot;:2}"
+                                            data-free-mode="" data-slider-offset="" data-mousewheel="">
+
+                                            <div class="swiper-wrapper">
+    {% for re in review %}
+    <div class="swiper-slide">
+        <div class="ptf-twitter-review ptf-twitter-review--style-1">
+            <div class="ptf-twitter-review__header">
+                <div class="ptf-twitter-review__avatar">
+                    <img src="{{ re.author_image.url }}" alt="" loading="lazy" width="50" height="60">
+                </div>
+                <div class="ptf-twitter-review__meta">
+                    <h6 class="ptf-twitter-review__author">{{ re.author_name }}</h6>
+                    <div class="ptf-twitter-review__info">
+                        <a href="#">@{{ re.platform_name }}</a>  -  {{ re.review_date }}
+                    </div>
+                </div>
+                <div class="ptf-twitter-review__icon">
+                    <i class="socicon-{{ re.platform_name }}"></i>
+                </div>
+            </div>
+            <div class="ptf-twitter-review__content">
+                <p><a href="#">@whatznot</a> - {{ re.review_details }}</p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Spacer-->
+                                <div class="ptf-spacer" style=" --ptf-xxl: 10rem; --ptf-md: 5rem;"></div>
+                            </section>

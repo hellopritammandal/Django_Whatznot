@@ -1,0 +1,86 @@
+{% load static %}
+
+                        <div class="ptf-spacer" style=" --ptf-xxl: 5rem; --ptf-md: 5rem;"></div>
+                            <div class="ptf-spacer" style=" --ptf-xxl: 5rem; --ptf-md: 5rem;"></div>
+                                    <div class="container-xxl">
+                                        <div class="row">
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-xl-7">
+                                                        <!--Animated Block-->
+                                                        <div class="ptf-animated-block" data-aos="fade"
+                                                            data-aos-delay="0">
+                                                            <h2 class="h1 large-heading has-accent-1">Blogs by Experts </h2>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-5 d-none d-xl-block">
+                                                        <!--Animated Block-->
+                                                        <div class="ptf-animated-block" data-aos="fade"
+                                                            data-aos-delay="100">
+                                                            <div class="has-black-color fz-90 lh-1 text-end"><svg
+                                                                    xmlns="http://www.w3.org/2000/svg"
+                                                                    fill="currentColor" style="height:1em"
+                                                                    viewBox="0 0 17 17">
+                                                                    <path d="M16 .997V10h-1V2.703L4.683 13l-.707-.708L14.291 1.997H6.975v-1H16z" /></svg>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="ptf-spacer" style=" --ptf-xxl: 0rem; --ptf-md: 5rem;"></div>
+                                        </div>
+                                        <!--Spacer-->
+                                        <div class="ptf-spacer" style=" --ptf-xxl: 2rem; --ptf-md: 3.125rem;"></div>
+                                        </section>
+                            <section>
+                                <!--Spacer-->
+                                <div class="ptf-spacer" style=" --ptf-xxl: 0rem; --ptf-md: 5rem;"></div>
+                                <div class="container-xxl">
+                                    <!--Animated Block-->
+                                    <div class="ptf-animated-block" data-aos="fade" data-aos-delay="0">
+                                        <h2 class="h5 d-inline-flex">Words By Whatznot Technology</h2><a
+                                            class="ptf-link-with-arrow fz-14 d-none d-lg-inline-flex"
+                                            href="{% url 'blogs' %}" style="margin-left: 3.125rem;">All Articles <i
+                                                class="lnil lnil-chevron-right"></i></a>
+                                    </div>
+                                    <!--Spacer-->
+                                    <div class="ptf-spacer" style=" --ptf-xxl: 3rem; --ptf-md: 2.8125rem;"></div>
+                                </div>
+                                <div class="container-xxl">
+    <!--Animated Block-->
+    <div class="ptf-animated-block" data-aos="fade" data-aos-delay="0">
+        <div class="ptf-isotope-grid" data-columns="3" data-layout="masonry" data-x-gap="100" data-y-gap="90">
+            {% for b in blogs %}
+            <div class="grid-sizer"></div>
+            <div class=" grid-item filter-1 filter-4">
+                <article class="ptf-post ptf-post--style-4">
+                    <div class="ptf-post__media"><img src="{{ b.blog_feature_image.url }}" alt="" loading="lazy">
+                        <div class="ptf-post__media__content">
+                            <header class="ptf-post__header">
+                                <div class="ptf-post__meta"><span class="cat">{{ b.category.name }}</span><span class="date">{{ b.published_date }}</span></div>
+                                <h3 class="ptf-post__title">{{ b.title }}</h3>
+                            </header>
+                        </div>
+                    </div>
+                    <div class="ptf-post__content">
+                        <header class="ptf-post__header">
+                            <div class="ptf-post__meta"><span class="cat">{{ b.category.name }}</span><span class="date">{{ b.published_date }}</span></div>
+                            <h3 class="ptf-post__title"><a href="{% url 'blog_detail' slug=b.slug %}">{{ b.title }}</a></h3>
+                        </header>
+                        <div class="ptf-post__excerpt">
+                            <p>{{ b.content|slice:":50" }}</p>
+                        </div>
+                        <footer class="ptf-post__footer"><a class="ptf-read-more-link" href="{% url 'blog_detail' slug=b.slug %}">Continue</a></footer>
+                    </div>
+                </article>
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+</div>
+
+                                <div class="ptf-spacer" style=" --ptf-xxl: 10rem; --ptf-md: 5rem;"></div>
+
+
+

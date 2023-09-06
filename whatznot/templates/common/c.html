@@ -1,0 +1,149 @@
+{% load static %}
+<div class="ptf-spacer" style=" --ptf-xxl: 5rem; --ptf-md: 5rem;"></div>
+
+
+    <!--Main-->
+    <main class="ptf-main">
+        <article class="ptf-page ptf-page--home-studio">
+
+
+
+            <section>
+                <!--Spacer-->
+                <div class="ptf-spacer" style=" --ptf-xxl: 5rem; --ptf-md: 5rem;"></div>
+                <div class="container-xxl">
+                    <div class="row">
+                        <div class="col-xl-10">
+                            <!--Animated Block-->
+                            <div class="ptf-animated-block aos-init aos-animate" data-aos="fade" data-aos-delay="0">
+                                <h1 class="large-heading">Let's get you an <br>estimate</h1>
+                                <!--Spacer-->
+                                <div class="ptf-spacer" style=" --ptf-xxl: 5rem; --ptf-md: 2.5rem;"></div>
+                                <!--Social Icon--><a class="ptf-social-icon ptf-social-icon--style-3 twitter" href="https://www.freelancer.com/u/whatznot" target="_blank"><i class="socicon-freelancer"></i></a>
+                                <!--Social Icon--><a class="ptf-social-icon ptf-social-icon--style-3 twitter" href="https://www.upwork.com/freelancers/whatznot" target="_blank"><i class="socicon-upwork"></i></a>
+                                <!--Social Icon--><a class="ptf-social-icon ptf-social-icon--style-3 facebook" href="https://www.facebook.com/whatznot" target="_blank"><i class="socicon-facebook"></i></a>
+                                <!--Social Icon--><a class="ptf-social-icon ptf-social-icon--style-3 instagram" href="https://www.instagram.com/whatznot/" target="_blank"><i class="socicon-instagram"></i></a>
+                                <!--Social Icon--><a class="ptf-social-icon ptf-social-icon--style-3 pinterest" href="https://www.linkedin.com/company/whatznot" target="_blank"><i class="socicon-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Spacer-->
+                <div class="ptf-spacer" style=" --ptf-xxl: 6.25rem; --ptf-md: 3.125rem;"></div>
+            </section>
+
+
+            <section>
+                <div class="container-xxl">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <!--Animated Block-->
+                            <div class="ptf-animated-block">
+                                <h5 class="fz-14 text-uppercase has-3-color fw-normal">Address
+                                </h5>
+                                <!--Spacer-->
+                                <div class="ptf-spacer" style=" --ptf-xxl: 1.25rem;"></div>
+                                <p class="fz-20 lh-1p5 has-black-color">Chakdaha , West Bengal <br>INDIA</p>
+                            </div>
+                            <!--Spacer-->
+                            <div class="ptf-spacer" style=" --ptf-xxl: 2.1875rem;"></div>
+                            <!--Animated Block-->
+                            <div class="ptf-animated-block">
+                                <h5 class="fz-14 text-uppercase has-3-color fw-normal">Email
+                                </h5>
+                                <!--Spacer-->
+                                <div class="ptf-spacer" style=" --ptf-xxl: 1.25rem;"></div>
+                                <p class="fz-20 lh-1p5 has-black-color"><a href="mailto:hello@whatznot.com">hello@whatznot.com<br></a><a href="mailto:info@whatznot.com">info@whatznot.com</a></p>
+                            </div>
+                            <!--Spacer-->
+                            <div class="ptf-spacer" style=" --ptf-xxl: 2.1875rem;"></div>
+                            <!--Animated Block-->
+                            <div class="ptf-animated-block">
+                                <h5 class="fz-14 text-uppercase has-3-color fw-normal">Phone
+                                </h5>
+                                <!--Spacer-->
+                                <div class="ptf-spacer" style=" --ptf-xxl: 1.25rem;"></div>
+                                <p class="fz-20 lh-1p5 has-black-color"><a href="tel:+919735151074">+91 973 5151 074</a></p>
+                            </div>
+                            <!--Spacer-->
+                            <div class="ptf-spacer" style=" --ptf-lg: 4.375rem; --ptf-md: 2.1875rem;"></div>
+                        </div>
+                        <div class="col-lg-8">
+                            <!--Animated Block-->
+                            <div class="ptf-animated-block">
+                                <h5 class="fz-14 text-uppercase has-3-color fw-normal">Tell us
+                                    about your project and goals.</h5>
+                                <!--Spacer-->
+                                <div class="ptf-spacer" style=" --ptf-xxl: 3.125rem;"></div>
+<form action="" method="post">
+    {% csrf_token %}
+    <div class="ptf-form-group">
+        <label for="id_name" data-number="01">What’s your <a class="has-accent-1">name?</a></label>
+        <input class="is-large" type="text" name="name" id="id_name" required>
+    </div>
+
+    <div class="ptf-form-group">
+        <label for="id_email" data-number="02">What’s your <a class="has-accent-1">email</a> address?</label>
+        <input class="is-large" type="email" name="email" id="id_email" required>
+    </div>
+
+    <div class="ptf-form-group">
+        <label for="id_phone_number" data-number="03">What’s your <a class="has-accent-1">Phone Number ?</a> ( Add Country Code )  </label>
+        <input class="is-large" type="tel" name="phone_number" id="id_phone_number" required>
+    </div>
+
+    <div class="ptf-form-group">
+        <label for="id_project_summary" data-number="04">Tell us about your <a class="has-accent-1">Project Goals </a>in a snapshot.</label>
+        <textarea class="is-large" name="project_summary" id="id_project_summary" required></textarea>
+    </div>
+
+    <div class="ptf-form-group">
+        <label for="id_budget" data-number="05">What have you <a class="has-accent-1">Budgeted </a>for this project?</label>
+        <select class="is-large" name="budget" id="id_budget" required>
+            <option value="NoIdea">I Don't Have Any Idea </option>
+            <option value="3000-10000">₹ 3000 - ₹ 10000</option>
+            <option value="10000-40000">₹ 10000 - ₹ 400000</option>
+            <option value="40000-100000">₹ 40000 - ₹ 100000</option>
+            <option value="100000up">₹ 100000 and More </option>
+
+
+        </select>
+    </div>
+
+    <!-- Spacer -->
+    <div class="ptf-spacer" style="--ptf-xxl: 2.5rem;"></div>
+
+    <div class="ptf-form-group">
+        <label class="ptf-checkbox">
+            <input class="d-none" type="checkbox" name="newsletter_subscription" id="id_newsletter_subscription">
+            <span class="ptf-checkbox__checkmark"></span>I agree to receive occasional Whatznot Technology's newsletters containing news &amp; advice on creating personal and business progress via digital tech.
+        </label>
+    </div>
+
+    <!-- Spacer -->
+    <div class="ptf-spacer" style="--ptf-xxl: 5.625rem;"></div>
+
+    <button class="ptf-submit-button" type="submit">Submit<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 17 17">
+            <path d="M16 .997V10h-1V2.703L4.683 13l-.707-.708L14.291 1.997H6.975v-1H16z"></path>
+        </svg>
+    </button>
+</form>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Spacer-->
+                <div class="ptf-spacer" style=" --ptf-xxl: 10rem; --ptf-md: 5rem;"></div>
+            </section>
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,114 @@
+{% extends 'common/base.html' %}
+{% load static %}
+
+
+
+{% block title %} F&Qs| Whatznot Technology {% endblock title %}
+
+
+{% block content %}
+
+
+    <!--Main-->
+    <main class="ptf-main">
+        <!--Single Post-->
+        <article class="ptf-single-post">
+            <section>
+                <!--Spacer-->
+                <div class="ptf-spacer" style=" --ptf-xxl: 5rem; --ptf-md: 5rem;"></div>
+                <div class="container-xxl">
+                    <div class="row">
+                        <div class="col-xl-10">
+                            <!--Animated Block-->
+                            <div class="ptf-animated-block aos-init aos-animate" data-aos="fade" data-aos-delay="0">
+                                <h1 class="large-heading">FAQs</h1>
+                                <!--Spacer-->
+                                <div class="ptf-spacer" style=" --ptf-xxl: 2.5rem;"></div>
+                                <p class="fz-18">Explore our frequently asked questions page for quick and detailed answers to common questions. We've designed it with your convenience in mind, covering a wide range of inquiries.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Spacer-->
+                <div class="ptf-spacer" style=" --ptf-xxl: 6.25rem; --ptf-md: 3.125rem;"></div>
+            </section>
+ {% for category in categories %}
+
+            <section>
+                <div class="container-xxl">
+                    <!--Animated Block-->
+                    <div class="ptf-animated-block aos-init aos-animate" data-aos="fade" data-aos-delay="0">
+                        <!--FAQ-->
+                        <div class="ptf-faq">
+                            <div class="ptf-faq__category">
+                                <h3>{{ category.name }}</h3><br>
+                            </div>
+                                {% for faq in category.faq_set.all %}
+                            <div class="ptf-faq__content">
+                                <div class="ptf-faq__item">
+                                    <div class="ptf-faq__question">
+                                        <h6>{{ faq.question }}
+                                        </h6><br><br>
+                                    </div>
+                                    <div class="ptf-faq__answer">
+                                        <p>{{ faq.answer }}
+                                        </p><br>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            <!--Spacer-->
+                    <div class="ptf-spacer" style=" --ptf-xxl: 5.625rem;"></div>
+                    <!--Animated Block-->
+{% endfor %}
+
+            <section>
+                <div class="container-xxl">
+                    <!--Animated Block-->
+                   
+                    {% include "common/blogsView.html" %}
+
+
+                                {% include "common/c.html" %}
+
+                                <section>
+                                    <!--Spacer-->
+                                    <div class="ptf-spacer" style=" --ptf-xxl: 12.5rem; --ptf-md: 6.25rem;"></div>
+                                    <div class="container text-center">
+                                        <div class="d-inline-flex text-start">
+                                            <!--Animated Block-->
+                                            <div class="ptf-animated-block aos-init" data-aos="fade" data-aos-delay="0">
+                                                <div class="fz-30">Describe your project</div>
+                                                <!--Spacer-->
+                                                <div class="ptf-spacer" style=" --ptf-xxl: 1.25rem;"></div>
+                                                <div class="fz-130 fz-90--md has-black-color has-secondary-font fw-normal lh-1p1"><a class="ptf-filled-link" href="https://wa.me/+919735151074" target="_blank" >WhatsApp Us</a></div>
+                                                <div class="fz-80 has-black-color"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" style="height:1em" viewBox="0 0 17 17">
+                                                        <path d="M16 .997V10h-1V2.703L4.683 13l-.707-.708L14.291 1.997H6.975v-1H16z"></path>
+                                                    </svg></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--Spacer-->
+                                    <div class="ptf-spacer" style=" --ptf-xxl: 10rem; --ptf-md: 5rem;"></div>
+                                </section>
+                                <section>
+                                    <div class="container-xxl">
+                                        <!--Divider-->
+                                        <div class="ptf-divider" style="--ptf-color: var(--ptf-color-14); --ptf-height: 1px;"></div>
+                                    </div>
+                                </section>
+
+
+            </article>
+            </main>
+     
+        </article>
+    </main>
+
+ <!--Footer-->
+ {% endblock content %}

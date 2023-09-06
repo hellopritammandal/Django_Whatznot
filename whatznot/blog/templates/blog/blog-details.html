@@ -1,0 +1,278 @@
+{% extends 'common/base2.html' %}
+{% load static %}
+
+
+
+{% block title %} {{ blog.title }} by  Whatznot Technology {% endblock title %}
+
+
+{% block content %}
+
+
+    <!--Main-->
+    <main class="ptf-main">
+        <!--Single Post-->
+        <article class="ptf-single-post">
+            <!--Post Header-->
+            <header class="ptf-single-post__header ptf-single-post__header--style-2">
+                <div class="container-xxl">
+                    <div class="row">
+                        <div class="col-xl-9">
+                            <h1 class="ptf-single-post__title">{{ blog.title }}</h1>
+                            <div class="ptf-single-post__meta"><span class="cat">{{ blog.category }}</span><span class="date">{{ blog.published_date }}</span></div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!--Post Media-->
+            <div class="ptf-single-post__media">
+                <div class="container-xxl"><img src="{{ blog.blog_feature_image.url}}" alt="{{ blog.title}}" loading="lazy"></div>
+            </div>
+            <!--Post Wrapper-->
+            <div class="ptf-single-post__wrapper">
+                <div class="container-xxl">
+                    <div class="row">
+                        <div class="col-xl-8">
+                            <!--Animated Block-->
+                            <div class="ptf-animated-block aos-init" data-aos="fade" data-aos-delay="0">
+                                <!--Post Info-->
+                                <div class="ptf-single-post__info"><a class="author" href="#"><i class="lnil lnil-user"></i>by <span>{{ blog.author}}</span></a><a class="view" href="#"><i class="lnil lnil-eye"></i>{{ blog.views }}</a><a class="report" href="#"><i class="lnil lnil-comments"></i>{{ blog.comment_set.count }} Comments</a></div>
+                                <!--Post Excerpt-->
+                                <div class="ptf-single-post__excerpt"><span class="has-accent-1">{{ blog.title }}</span>   - A Content By Pritam</div>
+                                <!--Post Content-->
+                                <div class="ptf-single-post__content">
+                                    <p> {{ blog.content }}</p>
+                                </div>
+                                <!--Post Footer-->
+                                <footer class="ptf-single-post__footer">
+                                    <!--Post Tags-->
+                                    <div class="ptf-post-tags">
+                                        {% for tag in blog.tags.all %}
+                                            <a href="#">{{ tag.name }}</a>
+                                        {% endfor %}
+                                    </div>
+
+                                    <!--Post Socials-->
+                                    <div class="ptf-post-socials"><span>Share on</span>
+                                        <div class="has-black-color">
+    <!-- Share on WhatsApp -->
+    <a class="ptf-social-icon ptf-social-icon--style-4 whatsapp" href="whatsapp://send?text={{ request.build_absolute_uri|urlencode }}" target="_blank">
+        <i class="socicon-whatsapp"></i>
+    </a>
+
+    <!-- Share on Facebook -->
+    <a class="ptf-social-icon ptf-social-icon--style-4 facebook" href="https://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri|urlencode }}" target="_blank">
+        <i class="socicon-facebook"></i>
+    </a>
+
+    <!-- Share on Instagram (Instagram doesn't have a direct sharing URL, so this will open Instagram's website) -->
+    <a class="ptf-social-icon ptf-social-icon--style-4 instagram" href="https://www.instagram.com" target="_blank">
+        <i class="socicon-instagram"></i>
+    </a>
+
+    <!-- Share on Twitter -->
+    <a class="ptf-social-icon ptf-social-icon--style-4 twitter" href="https://twitter.com/intent/tweet?url={{ request.build_absolute_uri|urlencode }}" target="_blank">
+        <i class="socicon-twitter"></i>
+    </a>
+
+    <!-- Share on LinkedIn -->
+    <a class="ptf-social-icon ptf-social-icon--style-4 linkedin" href="https://www.linkedin.com/sharing/share-offsite/?url={{ request.build_absolute_uri|urlencode }}" target="_blank">
+        <i class="socicon-linkedin"></i>
+    </a>
+</div>
+
+                                    </div>
+                                </footer>
+                                <!--About Author-->
+                                <div class="ptf-about-author">
+                                    <div class="ptf-about-author__avatar"><img src="assets/img/root/author-avatar.png" alt="" loading="lazy"></div>
+                                    <div class="ptf-about-author__content">
+                                        <div class="ptf-about-author__header">
+                                            <h6>Pritam Mandal</h6><span>Founder</span>
+                                        </div>
+                                        <div class="ptf-about-author__text">
+                                            <p>At Whatznot Technology, I'm Pritam, a full-stack developer with a passion for IT. As the founder, I'm dedicated to sharing insightful IT information through our blogs. Join us as we explore the ever-changing world of technology, demystify complex concepts, and provide practical solutions. Whether you're a seasoned developer or just starting, Whatznot Technology is your go-to source for staying informed and inspired in the IT realm.</p>
+                                        </div>
+                                        <div class="has-black-color">
+                                            <!--Social Icon--><a class="ptf-social-icon ptf-social-icon--style-3 twitter" href="https://www.freelancer.com/u/whatznot" target="_blank"><i class="socicon-freelancer"></i></a>
+                                <!--Social Icon--><a class="ptf-social-icon ptf-social-icon--style-3 twitter" href="https://www.upwork.com/freelancers/whatznot" target="_blank"><i class="socicon-upwork"></i></a>
+                                <!--Social Icon--><a class="ptf-social-icon ptf-social-icon--style-3 facebook" href="https://www.facebook.com/whatznot" target="_blank"><i class="socicon-facebook"></i></a>
+                                <!--Social Icon--><a class="ptf-social-icon ptf-social-icon--style-3 instagram" href="https://www.instagram.com/whatznot/" target="_blank"><i class="socicon-instagram"></i></a>
+                                <!--Social Icon--><a class="ptf-social-icon ptf-social-icon--style-3 pinterest" href="https://www.linkedin.com/company/whatznot" target="_blank"><i class="socicon-linkedin"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Comments-->
+                                <section class="ptf-page-comments">
+                                    <!--Comments list-->
+                                    <div class="ptf-page-comments__list">
+                                        <h2 class="ptf-page-comments__title">{{ blog.comment_set.count }}Comments:</h2>
+                                        <ul class="ptf-comments">
+                                            {% for comment in comments %}
+                                            <li class="ptf-comment-item">
+                                                <div class="ptf-comment-item__inner"><a class="ptf-comment-avatar" href="#"><img src="assets/img/root/comment-avatar-1.png" alt="" loading="lazy"></a>
+                                                    <div class="ptf-comment-list">
+
+                                                    <div class="ptf-comment">
+                                                        <div class="ptf-comment-header">
+                                                            <h5 class="ptf-comment-name"><a href="#">{{ comment.user }}</a></h5>
+                                                            <div class="ptf-comment-metas">{{ comment.created_date }}</div>
+                                                        </div>
+                                                        <div class="ptf-comment-text">
+                                                            <p>{{ comment.content }}</p>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                    <!--Comments form-->
+                                    <div class="ptf-page-comments__form">
+                                        <h2 class="ptf-page-comments__title">Leave a comment:</h2>
+                                        <form>
+                                            <div class="ptf-form-group">
+                                                <textarea rows="5" placeholder="Write your comment here"></textarea>
+                                            </div>
+                                            <div class="ptf-form-row two-col" style="margin-bottom: .625rem;">
+                                                <div class="ptf-form-group">
+                                                    <input type="text" placeholder="Your name *">
+                                                </div>
+                                                <div class="ptf-form-group">
+                                                    <input type="email" placeholder="Your Email *">
+                                                </div>
+                                            </div>
+                                            <div class="ptf-form-group" style="margin-bottom: 3.75rem;">
+                                                <label class="ptf-checkbox" for="terms">
+                                                    <input class="d-none" type="checkbox" id="terms"><span class="ptf-checkbox__checkmark"></span>Save my name &amp; email in this browser for next time I comment.
+                                                </label>
+                                            </div>
+                                            <p class="form-submit">
+                                                <button class="ptf-submit-button ptf-submit-button--style-2">
+                                                    Submit<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 17 17">
+                                                        <path d="M16 .997V10h-1V2.703L4.683 13l-.707-.708L14.291 1.997H6.975v-1H16z"></path>
+                                                    </svg></button>
+                                            </p>
+                                        </form>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                        <div class="col-xl-4">
+                            <div class="ptf-sidebar ptf-sidebar--right">
+                                <!--Widget-->
+                                <div class="ptf-widget ptf-widget-search">
+                                    <!--Animated Block-->
+                                    <div class="ptf-animated-block aos-init" data-aos="fade" data-aos-delay="0">
+                                        <h4 class="ptf-widget-title">Search</h4>
+                                        <form class="ptf-search-form">
+                                            <input type="text" placeholder="Search in blog">
+                                            <button><i class="lnil lnil-search-alt"></i></button>
+                                        </form>
+                                    </div>
+                                </div>
+                                <!--Widget-->
+                                <div class="ptf-widget ptf-widget-socials">
+                                    <!--Animated Block-->
+                                    <div class="ptf-animated-block aos-init" data-aos="fade" data-aos-delay="0">
+                                        <h4 class="ptf-widget-title">Social</h4>
+                                        <!--Social Icon--><a class="ptf-social-icon ptf-social-icon--style-3 twitter" href="https://www.freelancer.com/u/whatznot" target="_blank"><i class="socicon-freelancer"></i></a>
+                                <!--Social Icon--><a class="ptf-social-icon ptf-social-icon--style-3 twitter" href="https://www.upwork.com/freelancers/whatznot" target="_blank"><i class="socicon-upwork"></i></a>
+                                <!--Social Icon--><a class="ptf-social-icon ptf-social-icon--style-3 facebook" href="https://www.facebook.com/whatznot" target="_blank"><i class="socicon-facebook"></i></a>
+                                <!--Social Icon--><a class="ptf-social-icon ptf-social-icon--style-3 instagram" href="https://www.instagram.com/whatznot/" target="_blank"><i class="socicon-instagram"></i></a>
+                                <!--Social Icon--><a class="ptf-social-icon ptf-social-icon--style-3 pinterest" href="https://www.linkedin.com/company/whatznot" target="_blank"><i class="socicon-linkedin"></i></a>
+                                    </div>
+                                </div>
+                                <!--Widget-->
+                                <div class="ptf-widget ptf-widget-popular-posts">
+                                    <!--Animated Block-->
+                                    <div class="ptf-animated-block aos-init" data-aos="fade" data-aos-delay="0">
+                                        {% for related_blog in related_blog %}
+
+                                        <h4 class="ptf-widget-title">Popular Posts</h4>
+                                        <a class="ptf-popular-post" href="{% url 'blog_detail' related_blog.slug %}">
+
+
+                                            <div class="ptf-popular-post__number">1</div>
+                                            <div class="ptf-popular-post__content">
+                                                <span class="cat">{{ related_blog.category }}</span>
+                                                <h6>{{ related_blog.title }}</h6>
+                                            </div>
+                                        {% endfor %}
+
+
+                                    </div>
+                                </div>
+                                <!--Widget-->
+                                <div class="ptf-widget ptf-widget-newsletter">
+                                    <!--Animated Block-->
+                                    <div class="ptf-animated-block aos-init" data-aos="fade" data-aos-delay="0">
+                                        <h4 class="ptf-widget-title">Newsletter</h4>
+                                        <p>Signup to be the first to hear about exclusive deals.</p>
+                                        <form class="ptf-newsletter-form">
+                                            <input class="style-2" type="email" placeholder="Email Address">
+                                            <button class="ptf-btn ptf-btn--primary ptf-btn--block">Subscribe</button>
+                                        </form>
+                                    </div>
+                                </div>
+
+
+
+
+                                <!--Widget Category-->
+                                <!-- <div class="ptf-widget ptf-widget-categories">
+                                    <div class="ptf-animated-block aos-init" data-aos="fade" data-aos-delay="0">
+                                        &nbsp
+                                        <h4 class="ptf-widget-title">Categories</h4>
+                                        <ul>
+                                            {% for category in categories %}
+                                            <li>
+                                                <a href="#">{{ category.name }} <span>{{ category.blog_count }}</span></a>
+                                            </li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                </div> -->
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <section>
+                        <div class="ptf-spacer" style=" --ptf-xxl: 12.5rem; --ptf-md: 6.25rem;"></div>
+                    </section>                
+                    <section>
+                        <div class="container-xxl">                         
+                            <div class="ptf-divider" style="--ptf-height: 1px; --ptf-color: var(--ptf-color-14);"></div>
+                        </div>
+                    </section>
+                    <section>
+                        <!--Spacer-->
+                        <div class="ptf-spacer" style=" --ptf-xxl: 12.5rem; --ptf-md: 6.25rem;"></div>
+                        <div class="container text-center">
+                            <div class="d-inline-flex text-start">
+                                <!--Animated Block-->
+                                <div class="ptf-animated-block aos-init aos-animate">
+                                    <div class="fz-30">Describe your project</div>
+                                    <!--Spacer-->
+                                    <div class="ptf-spacer" style=" --ptf-xxl: 1.25rem;"></div>
+                                    <div class="fz-130 fz-90--md has-black-color has-secondary-font fw-normal lh-1p1"><a class="ptf-filled-link" href="tel:+919735151074">Call Whatznot</a></div>
+                                    <div class="fz-80 has-black-color"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" style="height:1em" viewBox="0 0 17 17">
+                                            <path d="M16 .997V10h-1V2.703L4.683 13l-.707-.708L14.291 1.997H6.975v-1H16z"></path>
+                                        </svg></div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>                
+                </div>
+            </div>
+        </article>
+    </main>
+
+        <!--Footer-->
+
+ {% endblock content %}

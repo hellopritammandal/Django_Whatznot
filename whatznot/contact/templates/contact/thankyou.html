@@ -1,0 +1,38 @@
+{% extends 'common/base.html' %}
+{% load static %}
+
+
+
+{% block title %} Thank YOu | Whatznot Technology {% endblock title %}
+
+
+{% block content %}
+
+
+
+
+
+    <!--Main-->
+    <main class="ptf-main">
+        <!--Single Post-->
+        <article class="ptf-single-post">
+
+            <header class="ptf-single-post__header ptf-single-post__header--style-2">
+                <div class="container-xxl">
+                    <div class="row">
+                        <div class="ptf-animated-block">
+                            <h1 class="fz-130 fz-90--md has-secondary-font fw-normal">Thank <span class="has-accent-1">You... </span></h1>
+                        </div>
+                    </div>
+                </div>           
+              <!--Spacer-->
+              <div class="ptf-spacer" style=" --ptf-xxl: 5.625rem;"></div>
+
+ <script>
+    setTimeout(function() {
+        window.location.href = "{% url 'index' %}";  // Redirect to the 'index' URL after 3 seconds
+    }, 3000);  // 3000 milliseconds (3 seconds)
+</script>
+ {% endblock content %}
+
+

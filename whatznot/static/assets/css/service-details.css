@@ -1,0 +1,52 @@
+
+.technology-icon {
+    margin-top: 40px;
+}
+
+.technology-icon ul {
+    display: flex;
+    display: -ms-flexbox;
+    flex-wrap: wrap;
+    margin: 0px;
+}
+.technology-icon ul li {
+    list-style: none;
+    margin: 0 8px 8px 0;
+}
+.technology-icon ul li a {
+    color: red;
+}
+.technology-icon ul li .tech-icon {
+    padding: 10px 12px;
+    font-size: 30px;
+    color: #252B33 !important;
+    border-radius: 2px;
+    border: 1px solid #EEEEEE;
+    display: flex;
+    display: -ms-flexbox;
+    align-items: center;
+    justify-content: center;
+}
+
+.service-points, .service-content .green-btn {
+    margin-top: 40px;
+}
+
+.service-points ul {
+    display: flex;
+    display: -ms-flexbox;
+    flex-wrap: wrap;
+    margin-left: 20px;
+    margin-bottom: 0px;
+}
+.service-points ul li {
+    font-size: 14px;
+    color: #252B33;
+    list-style-position: outside;
+    padding: 0 30px 5px 0px;
+    width: 100%;
+    position: relative;
+}
+.service-points ul.two-col li {
+    width: 50%;
+}

@@ -1,0 +1,207 @@
+{% extends 'common/base2.html' %}
+{% load static %}
+
+
+
+{% block title %} Blogs from  Whatznot Technology {% endblock title %}
+
+
+{% block content %}
+
+
+
+    <!--Main-->
+    <main class="ptf-main">
+        <article class="ptf-page ptf-page--blog-grid">
+            <section>
+                <!--Spacer-->
+                <div class="ptf-spacer" style=" --ptf-xxl: 10rem; --ptf-md: 5rem;"></div>
+                <div class="container-xxl">
+                    <div class="row">
+                        <div class="col-xl-10">
+                            <!--Animated Block-->
+                            <div class="ptf-animated-block aos-init aos-animate" data-aos="fade" data-aos-delay="0">
+                                <h1 class="large-heading">Blog</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Spacer-->
+                    <div class="ptf-spacer" style=" --ptf-xxl: 4.375rem;"></div>
+                </div>
+                <div class="container-xxl">
+                    <div class="row align-items-center">
+                        <div class="col-xl-8">
+                            <!--Animated Block-->
+                            <div class="ptf-animated-block aos-init aos-animate" data-aos="fade" data-aos-delay="0">
+                                <ul class="ptf-filters ptf-filters--style-2" id="ptf-filter-grid">
+                                    <li class="filter-item filter-item-active" data-filter="*">All</li>
+                                    {% for category in categories %}
+                                    <li class="filter-item">{{ category.name }}</li>
+                                    {% endfor %}
+                                </ul>
+
+                            </div>
+                            <!--Spacer-->
+                            <div class="ptf-spacer" style=" --ptf-xl: 3.75rem; --ptf-md: 1.875rem;"></div>
+                        </div>
+                        <div class="col-xl-3 offset-xl-1">
+                            <!--Animated Block-->
+                            <div class="ptf-animated-block aos-init aos-animate" data-aos="fade" data-aos-delay="100">
+                                <div class="ptf-widget ptf-widget-search">
+                                    <form class="ptf-search-form">
+                                        <input type="text" placeholder="Search in blog">
+                                        <button><i class="lnil lnil-search-alt"></i></button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <!--Spacer-->
+                <div class="ptf-spacer" style=" --ptf-xxl: 6.25rem; --ptf-md: 3.125rem;"></div> 
+            </section>         
+
+            <section>
+                <div class="container-xxl container-xxl--custom">
+                    <!--Animated Block-->
+                    <div class="ptf-animated-block aos-init aos-animate" data-aos="fade" data-aos-delay="0">
+                        <div class="ptf-isotope-grid" data-columns="4" data-layout="masonry" data-x-gap="15" data-y-gap="15" data-controls="#ptf-filter-masonry" style="--ptf-gutter-x:15px; --ptf-gutter-y:15px; position: relative; height: 1623.28px;">
+                            <div class="grid-sizer"></div>
+                                {% for blog in blogs %}
+                            <div class=" grid-item filter-1 filter-4" style="position: absolute; left: 0px; top: 0px;">
+                                <!--Blog Post-->
+                                <!-- blog.html -->
+
+<div class="container">
+
+    <div class="row">
+        <article class="ptf-post ptf-post--style-2">
+            <div class="ptf-post__media">
+                <img src="{{ blog.blog_feature_image.url }}" alt="" loading="lazy">
+                <div class="ptf-post__media__content">
+                    <header class="ptf-post__header">
+                        <div class="ptf-post__meta">
+                            <span class="cat">{{ blog.category }}</span>
+                            <span class="date">{{ blog.published_date|date:"M d, Y" }}</span>
+                        </div>
+                        <h3 class="ptf-post__title">{{ blog.title }}</h3>
+                    </header>
+                </div>
+            </div>
+            <div class="ptf-post__content">
+                <header class="ptf-post__header">
+                    <div class="ptf-post__meta">
+                        <span class="cat">{{ blog.category }}</span>
+                        <span class="date">{{ blog.published_date|date:"M d, Y" }}</span>
+                    </div>
+                    <h3 class="ptf-post__title">
+                        <a href="{% url 'blog_detail' blog.slug %}">{{ blog.title }}</a>
+                    </h3>
+                </header>
+                <div class="ptf-post__excerpt">
+                    <p>{{ blog.content|truncatechars:200 }}</p>
+                </div>
+                <footer class="ptf-post__footer">
+                    <a class="ptf-read-more-link" href="{% url 'blog_detail' blog.slug %}">Continue</a>
+                </footer>
+            </div>
+        </article>
+    </div>
+
+</div>
+                            </div>
+                        {% endfor %}
+                            </div>
+                        </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <!--Spacer-->
+                    <div class="ptf-spacer" style=" --ptf-xxl: 10rem; --ptf-md: 5rem;"></div>
+                    <div class="text-center">
+                        <!--Animated Block-->
+                        <div class="ptf-animated-block aos-init aos-animate" data-aos="fade" data-aos-delay="0"><a class="ptf-load-more" href="#">More</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+    
+            <section>
+                <div class="container-xxl">
+                    <div class="ptf-spacer" style=" --ptf-xxl: 10rem; --ptf-md: 5rem;"></div>
+                    <!--Divider-->
+                    <div class="ptf-divider" style="--ptf-height: 1px; --ptf-color: var(--ptf-color-14);"></div>
+                </div>
+            </section>
+            <section>
+                <!--Spacer-->
+                <div class="ptf-spacer" style=" --ptf-xxl: 9.375rem; --ptf-md: 4.6875rem;"></div>
+                <div class="container-xxl">
+                    <div class="row align-items-center">
+                        <div class="col-lg-4">
+                            <!--Animated Block-->
+                            <div class="ptf-animated-block aos-init aos-animate" data-aos="fade" data-aos-delay="0">
+                                <h1 class="large-heading">Newsletter</h1>
+                                <!--Spacer-->
+                                <div class="ptf-spacer" style=" --ptf-xxl: 1.25rem;"></div>
+                                <p>Get the latest news &amp; insight.</p>
+                            </div>
+                            <!--Spacer-->
+                            <div class="ptf-spacer" style=" --ptf-lg: 3.75rem; --ptf-md: 1.875rem;"></div>
+                        </div>
+                        <div class="col-lg-6 offset-lg-2">
+                            <!--Animated Block-->
+                            <div class="ptf-animated-block aos-init aos-animate" data-aos="fade" data-aos-delay="100">
+                                <!--Spacer-->
+                                <form class="ptf-subscribe-form ptf-subscribe-form--large">
+                                    <div class="ptf-form-group"><i class="lnil lnil-envelope-alt"></i>
+                                        <input type="email" placeholder="Email Address">
+                                        <button>Subscribe</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Spacer-->
+                <div class="ptf-spacer" style=" --ptf-xxl: 10rem; --ptf-md: 5rem;"></div>
+            </section>
+
+
+            <section>
+                <div class="container-xxl">
+                   
+                    <!--Divider-->
+                    <div class="ptf-divider" style="--ptf-height: 1px; --ptf-color: var(--ptf-color-14);"></div>
+                </div>
+            </section>
+
+
+            <section>
+                <!--Spacer-->
+                <div class="ptf-spacer" style=" --ptf-xxl: 12.5rem; --ptf-md: 6.25rem;"></div>
+                <div class="container text-center">
+                    <div class="d-inline-flex text-start">
+                        <!--Animated Block-->
+                        <div class="ptf-animated-block aos-init aos-animate" data-aos="fade" data-aos-delay="0">
+                            <div class="fz-30">Describe your project</div>
+                            <!--Spacer-->
+                            <div class="ptf-spacer" style=" --ptf-xxl: 1.25rem;"></div>
+                            <div class="fz-130 fz-90--md has-black-color has-secondary-font fw-normal lh-1p1"><a class="ptf-filled-link" href="tel:+919735151074">Call Whatznot</a></div>
+                            <div class="fz-80 has-black-color"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" style="height:1em" viewBox="0 0 17 17">
+                                    <path d="M16 .997V10h-1V2.703L4.683 13l-.707-.708L14.291 1.997H6.975v-1H16z"></path>
+                                </svg></div>
+                        </div>
+                    </div>
+                </div>
+                <!--Spacer-->
+                <div class="ptf-spacer" style=" --ptf-xxl: 10rem; --ptf-md: 5rem;"></div>
+            </section>
+        </article>
+    </main>
+ {% endblock content %}

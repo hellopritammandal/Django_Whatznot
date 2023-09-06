@@ -1,0 +1,28 @@
+{% load static %}
+<div class="ptf-spacer" style=" --ptf-xxl: 5rem; --ptf-md: 5rem;"></div>
+
+
+
+
+<section>
+    <!--Spacer-->
+    <div class="ptf-spacer" style=" --ptf-xxl: 8.75rem; --ptf-md: 4.375rem;"></div>
+    <div class="container">
+                                    <!--Animated Block-->
+        <div class="ptf-animated-block" data-aos="fade" data-aos-delay="0">
+            <h2 class="h1 large-heading has-secondary-font fw-normal">Our Clients</h2>
+        </div>
+        <!--Spacer-->
+        <div class="ptf-spacer" style=" --ptf-xxl: 7.5rem; --ptf-md: 3.75rem;"></div>
+        <!--Clients List-->
+        <ul class="ptf-clients-list ptf-clients-list--start ptf-clients-list--style-1"
+            data-columns="5">
+            {% for client_item in client %}
+            <li class="ptf-clients-list__item" data-aos="fade"><img
+                    src="{{ client_item.image.url }}" alt="{{ client_item.name }}" loading="lazy"></li>
+            {% endfor %}
+        </ul>
+    </div>
+    <!--Spacer-->
+    <div class="ptf-spacer" style=" --ptf-xxl: 10rem; --ptf-md: 5rem;"></div>
+</section>
